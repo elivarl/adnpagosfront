@@ -31,30 +31,31 @@ pipeline {
      stage('Checkout') {
       steps{
         echo "------------>Checkout<------------"
-        checkout scm
+		checkout scm
       }
     }
 
      stage('NPM Install') {
       steps {
-        echo "------------>Installing<------------"
-        sh 'npm install'
+        withEnv(['NPM_CONFIG_LOGLEVEL=warn']) {
+          sh 'npm install'
+        }
       }
     }
     
     stage('Test Unit') {
       steps{
-        echo "------------>Testing<------------"
-        sh 'npm run test'
+        echo "------------>Test<------------"
+        sh 'npm run test -- --watch=false --browsers ChromeHeadless'
       }
     }
 
-   stage('Test end-to-end') {
-   steps{
-      echo "------------>Testing Protractor<------------"
-      sh 'npm run e2e --'
-      }
-    }
+    //stage('Test end-to-end') {
+    //  steps{
+    //    echo "------------>Testing Protractor<------------"
+    //    sh 'npm run e2e --'
+    //  }
+    //}
 
      stage('Static Code Analysis') {
       steps{
