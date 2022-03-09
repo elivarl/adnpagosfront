@@ -1,8 +1,8 @@
-import { Injectable } from "@angular/core";
-import { HttpService } from "@core/services/http.service";
-import { environment } from "src/environments/environment";
-import { Pago } from "../model/Pago";
-import { PagoDetalle } from "../model/PagoDetalle";
+import { Injectable } from '@angular/core';
+import { HttpService } from '@core/services/http.service';
+import { environment } from 'src/environments/environment';
+import { Pago } from '../model/Pago';
+import { PagoDetalle } from '../model/PagoDetalle';
 
 @Injectable()
 export class PagoService {

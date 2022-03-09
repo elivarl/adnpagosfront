@@ -19,7 +19,6 @@ export class CrearProductoComponent implements OnInit {
   }
 
   cerar() {
-    console.log('Hola...');
     this.productoServices.guardar(this.productoForm.value);
   }
 

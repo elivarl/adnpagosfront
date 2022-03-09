@@ -1,5 +1,5 @@
 
-import { ServicioElectrico } from "src/app/feature/servicioelectrico/shared/model/servicio-electrico";
+import { ServicioElectrico } from 'src/app/feature/servicioelectrico/shared/model/servicio-electrico';
 export class Pago{
     id:string;
     fechaPago:Date;

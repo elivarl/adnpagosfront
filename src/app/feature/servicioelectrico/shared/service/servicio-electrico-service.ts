@@ -1,7 +1,7 @@
-import { Injectable } from "@angular/core";
-import { HttpService } from "@core/services/http.service";
-import { environment } from "src/environments/environment";
-import { ServicioElectrico } from "../model/servicio-electrico";
+import { Injectable } from '@angular/core';
+import { HttpService } from '@core/services/http.service';
+import { environment } from 'src/environments/environment';
+import { ServicioElectrico } from '../model/servicio-electrico';
 
 @Injectable()
 export class ServicioElectricoService {

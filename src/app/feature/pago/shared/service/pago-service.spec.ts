@@ -91,7 +91,6 @@ describe('PagoService', () => {
       }
            
     );
-
     const req= httpMock.expectOne(`${apiEndpointPagos}/detalle`);
     expect(req.request.method).toBe('POST');
     req.flush(dummyPago);
