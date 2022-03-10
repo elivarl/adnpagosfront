@@ -4,12 +4,14 @@ import { CrearServicioelectricoComponent } from "./components/crear-servicioelec
 import { ServicioelectricoComponent } from "./components/servicioelectrico/servicioelectrico.component";
 import { ServicioElectricoRoutingModule } from "./servicioelectrico-routing.module";
 import { ServicioElectricoService } from "./shared/service/servicio-electrico-service";
+import { ListarServicioelectricoComponent } from './components/listar-servicioelectrico/listar-servicioelectrico.component';
 
 @NgModule(
     {
         declarations:[
             CrearServicioelectricoComponent,
-            ServicioelectricoComponent
+            ServicioelectricoComponent,
+            ListarServicioelectricoComponent
         ],
         imports:[
             ServicioElectricoRoutingModule,

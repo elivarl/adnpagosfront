@@ -8,7 +8,7 @@ import { ServicioElectricoService } from '../../shared/service/servicio-electric
   styleUrls: ['./crear-servicioelectrico.component.css']
 })
 export class CrearServicioelectricoComponent implements OnInit {
-  servicioForm:FormGroup;
+  servicioElectricoForm:FormGroup;
 
   constructor( protected servicioElectricoService:ServicioElectricoService ) { }
 
@@ -17,16 +17,28 @@ export class CrearServicioelectricoComponent implements OnInit {
   }
 
   crear(){
-    this.servicioElectricoService.guardar(this.servicioForm.value);
+    this.servicioElectricoService.guardar(this.servicioElectricoForm.value).subscribe(
+      respuesta=>{
+        if(respuesta){
+          this.servicioElectricoForm.reset();
+        }        
+      }
+    );
   }
 
 
   private construirFormularioServicio(){
-    this.servicioForm= new FormGroup({
-      id: new FormControl('', [Validators.required]),
-      identificacionCliente: new FormControl('',[Validators.required])
+    this.servicioElectricoForm= new FormGroup({
+      numeroServicio: new FormControl('', [Validators.required]),
+      identificacionCliente: new FormControl('',[Validators.required]),
+      nombreCliente: new FormControl('',[Validators.required]),
+      mes: new FormControl('',[Validators.required]),
+      fechaMaximaPago: new FormControl('',[Validators.required]),
+      valor: new FormControl('',[Validators.required])
+
     });
 
   }
 
 }
+

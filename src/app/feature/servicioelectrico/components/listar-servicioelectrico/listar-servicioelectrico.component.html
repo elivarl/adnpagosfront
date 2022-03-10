@@ -1,0 +1,8 @@
+<p>listar-servicioelectrico works!</p>
+<div id="servicioselectricos">
+    <ul class="servicioselectricos">
+      <li *ngFor="let item of listaServiciosElectricos | async">
+        <span>{{item.numeroServicio}}</span> {{item.identificacionCliente}} {{item.nombreCliente}} {{item.mes}} {{item.fechaMaximaPago}} {{item.valor}} {{item.estado}}
+      </li>
+    </ul>
+  </div>

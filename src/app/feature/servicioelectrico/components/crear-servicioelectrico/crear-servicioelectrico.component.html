@@ -1,1 +1,54 @@
-<p>crear-servicioelectrico works!</p>
+<h1>Registrar Servicio Eléctrico</h1>
+<form [formGroup]="servicioElectricoForm" (ngSubmit)="crear()">
+  <div class="row">
+    <div class="col-sm-2">
+      <label>Número de Servicio:</label>
+    </div>
+    <div class="col-sm-4">
+      <input validar type="text" id="numeroServicio" name="numeroServicio" placeholder="Número servicio" class="form-control"
+        formControlName="numeroServicio">
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-2">
+      <label>Identificación Cliente:</label>
+    </div>
+    <div class="col-sm-4">
+      <input validar type="text" id="identificacionCliente" name="identificacionCliente" placeholder="Identificación cliente" class="form-control"
+      formControlName="identificacionCliente"> 
+    </div>
+    <div class="col-sm-2">
+        <label>Nombre del Cliente:</label>
+      </div>
+
+    <div class="col-sm-4">
+        <input validar type="text" id="nombreCliente" name="nombreCliente" placeholder="Nombre cliente" class="form-control"
+        formControlName="nombreCliente"> 
+      </div>
+      <div class="col-sm-2">
+        <label>Mes de pago:</label>
+      </div>
+      <div class="col-sm-4">
+        <input validar type="text" id="mes" name="mes" placeholder="Mes de pago" class="form-control"
+        formControlName="mes"> 
+      </div>
+      <div class="col-sm-2">
+        <label>Fecha máxima de Pago:</label>
+      </div>
+      <div class="col-sm-4">
+        <input validar type="text" id="fechaMaximaPago" name="fechaMaximaPago" placeholder="Fecha máxima de pago" class="form-control"
+        formControlName="fechaMaximaPago"> 
+      </div>
+      <div class="col-sm-2">
+        <label>Valor a pagar:</label>
+      </div>
+      <div class="col-sm-4">
+        <input validar type="text" id="valor" name="valor" placeholder="Valor a pagar" class="form-control"
+        formControlName="valor"> 
+      </div>
+     
+      
+  </div>
+  <button type="submit">Agregar</button>
+</form>
+
