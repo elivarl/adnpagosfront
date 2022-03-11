@@ -28,7 +28,7 @@ describe('ServicioElectricoService', () => {
   });
 
   it('deberia crear un servicio electrico', () => {
-    const servicioElectrico = new ServicioElectrico('1','1234','1717213183','Elivar Largo','Enero',new Date(),15,false);
+    const servicioElectrico = new ServicioElectrico('1','1234','1717213183','Elivar Largo','Enero',new Date(),15);
     service.guardar(servicioElectrico).subscribe((respuesta) => {
       expect(respuesta).toEqual(true);
     });
@@ -39,8 +39,8 @@ describe('ServicioElectricoService', () => {
 
   it('deberia listar servicios electricos', () => {
     const dummyServiciosElectricos = [
-      new ServicioElectrico('1','1234','1717213183','Elivar Largo','Enero',new Date(),15,false),
-      new ServicioElectrico('2','123','1717213183','Elivar Largo','Enero',new Date(),15,false),
+      new ServicioElectrico('1','1234','1717213183','Elivar Largo','Enero',new Date(),15),
+      new ServicioElectrico('2','123','1717213183','Elivar Largo','Enero',new Date(),15),
     ];
     service.consultar().subscribe(servicioselectricos => {
       expect(servicioselectricos.length).toBe(2);
@@ -52,7 +52,7 @@ describe('ServicioElectricoService', () => {
   });
 
   it('deberia eliminar un serivicio electrico',()=>{
-    const dummyServicioElectrico= new ServicioElectrico('1','1234','1717213183','Elivar Largo','Enero',new Date(),15,false);
+    const dummyServicioElectrico= new ServicioElectrico('1','1234','1717213183','Elivar Largo','Enero',new Date(),15);
     service.eliminar(dummyServicioElectrico).subscribe(
       (respuesta)=>{
         expect(respuesta).toEqual(true);

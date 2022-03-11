@@ -30,8 +30,8 @@ describe('PagoService', () => {
   });
 
   it('deberia crear un pago',()=>{
-    const dummyPago=new Pago('1',new Date(), '1717213183',10.0,'0',0,10,[ new ServicioElectrico('1','1234','1717213183','Elivar Largo','Enero',new Date(),15,false),
-      new ServicioElectrico('2','123','1717213183','Elivar Largo','Enero',new Date(),15,false)]);
+    const dummyPago=new Pago('1',new Date(), '1717213183',10.0,'0',0,10,[ new ServicioElectrico('1','1234','1717213183','Elivar Largo','Enero',new Date(),15),
+      new ServicioElectrico('2','123','1717213183','Elivar Largo','Enero',new Date(),15)]);
     service.guardar(dummyPago).subscribe(
       (respuesta)=>{
         expect(respuesta).toEqual(true);
@@ -45,8 +45,8 @@ describe('PagoService', () => {
 
 
   it('deberia listar los pagos', ()=>{
-    const dummyPagos=[new Pago('1',new Date(), '1717213183',10.0,'0',0,10,[ new ServicioElectrico('1','1234','1717213183','Elivar Largo','Enero',new Date(),15,false),
-      new ServicioElectrico('2','123','1717213183','Elivar Largo','Enero',new Date(),15,false)])];
+    const dummyPagos=[new Pago('1',new Date(), '1717213183',10.0,'0',0,10,[ new ServicioElectrico('1','1234','1717213183','Elivar Largo','Enero',new Date(),15),
+      new ServicioElectrico('2','123','1717213183','Elivar Largo','Enero',new Date(),15)])];
     service.consultar().subscribe(
       pagos=>{
         expect(pagos.length).toBe(1);
@@ -63,8 +63,8 @@ describe('PagoService', () => {
   it('deberia lista los detalles de un pago',()=>{
     const dummyPagoDetalles=[new PagoDetalle('Pago mes enero',10),new PagoDetalle('Pago mes febrero',20),];
 
-    const dummyPago=new Pago('1',new Date(), '1717213183',10.0,'0',0,10,[ new ServicioElectrico('1','1234','1717213183','Elivar Largo','Enero',new Date(),15,false),
-    new ServicioElectrico('2','123','1717213183','Elivar Largo','Enero',new Date(),15,false)]);
+    const dummyPago=new Pago('1',new Date(), '1717213183',10.0,'0',0,10,[ new ServicioElectrico('1','1234','1717213183','Elivar Largo','Enero',new Date(),15),
+    new ServicioElectrico('2','123','1717213183','Elivar Largo','Enero',new Date(),15)]);
 
     service.consultarPagoDetalle(dummyPago).subscribe(
       pagodetalles=>{
@@ -82,8 +82,8 @@ describe('PagoService', () => {
 
   it('deberia añadir un detalle de un pago',()=>{
 
-    const dummyPago=new Pago('1',new Date(), '1717213183',10.0,'0',0,10,[ new ServicioElectrico('1','1234','1717213183','Elivar Largo','Enero',new Date(),15,false),
-    new ServicioElectrico('2','123','1717213183','Elivar Largo','Enero',new Date(),15,false)]);
+    const dummyPago=new Pago('1',new Date(), '1717213183',10.0,'0',0,10,[ new ServicioElectrico('1','1234','1717213183','Elivar Largo','Enero',new Date(),15),
+    new ServicioElectrico('2','123','1717213183','Elivar Largo','Enero',new Date(),15)]);
 
     service.aniadirServicio(dummyPago).subscribe(
       respuesta=>{
