@@ -21,6 +21,9 @@
       "@servicioelectrico/*": [
         "src/app/feature/servicioelectrico/*"
       ],
+      "@pago/*": [
+        "src/app/feature/pago/*"
+      ],
       "@shared/*": [
         "src/app/shared/*"
       ]

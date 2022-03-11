@@ -8,7 +8,7 @@ import { ProductoModule } from '@producto/producto.module';
 import { CoreModule } from '@core/core.module';
 import { CookieService } from 'ngx-cookie-service';
 import { ServicioElectricoModule } from '@servicioelectrico/servicioelectrico.module';
-import { AniadirPagosComponent } from './feature/pago/components/aniadir-pagos/aniadir-pagos.component';
+import { PagoModule } from '@pago/pago.module';
 
 
 
@@ -16,14 +16,14 @@ import { AniadirPagosComponent } from './feature/pago/components/aniadir-pagos/a
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent,
-    AniadirPagosComponent
+    HomeComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ProductoModule,
     ServicioElectricoModule,
+    PagoModule,
     CoreModule
   ],
   providers: [CookieService],

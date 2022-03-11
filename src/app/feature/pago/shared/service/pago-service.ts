@@ -6,7 +6,7 @@ import { PagoDetalle } from '../model/PagoDetalle';
 
 @Injectable()
 export class PagoService {
-    private url:string=`${environment.endpoint}`+'pagos';
+    private url:string=`${environment.endpoint}/pagos`;
 
     constructor(protected http: HttpService) { }
 
@@ -26,6 +26,6 @@ export class PagoService {
     public consultarPagoDetalle(pago: Pago) {
         return this.http.doGet<PagoDetalle[]>(this.url+'/pagodetalles/'+pago.id, this.http.optsName('consulta detalles de un pago'));
 
-    }
+    }   
 
 }
