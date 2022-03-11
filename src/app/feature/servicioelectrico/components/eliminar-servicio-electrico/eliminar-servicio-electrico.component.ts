@@ -4,18 +4,17 @@ import { ServicioElectricoService } from '@servicioelectrico/shared/service/serv
 import { Observable } from 'rxjs';
 
 @Component({
-  selector: 'app-listar-servicioelectrico',
-  templateUrl: './listar-servicioelectrico.component.html',
-  styleUrls: ['./listar-servicioelectrico.component.css']
+  selector: 'app-eliminar-servicio-electrico',
+  templateUrl: './eliminar-servicio-electrico.component.html',
+  styleUrls: ['./eliminar-servicio-electrico.component.css']
 })
-export class ListarServicioelectricoComponent implements OnInit {
+export class EliminarServicioElectricoComponent implements OnInit {
 
   public listaServiciosElectricos:Observable<ServicioElectrico[]>;
 
   constructor(protected servicioElectricoService: ServicioElectricoService) { }
 
   ngOnInit(): void {
-    this.listaServiciosElectricos=this.servicioElectricoService.consultar();
   }
 
   eliminar(servicioElectrico: ServicioElectrico){

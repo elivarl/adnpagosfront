@@ -1,4 +1,8 @@
 <h1>Listar Servicio Electricos</h1>
+<div class="card">
+<div class="card-body"> </div>
+
+</div>
 <div id="servicioselectricos">
   <table class="table">
     <thead>
@@ -22,7 +26,7 @@
         <td>{{item.valor}} </td>
         <td>{{item.estado}} </td>        
         <td> <button type="button"  name="button"   class="btn btn-primary"  [routerLink]="['/estudiantes/form', item.id]" >Editar </button> </td>
-        <td> <button class="btn btn-danger"  > Eliminar </button></td>
+        <td> <button class="btn btn-danger" (click)="eliminar(item)" > Eliminar </button></td>
       </tr>
     </tbody>
   </table>
