@@ -25,7 +25,7 @@
         <td>{{item.mes}} </td>
         <td>{{item.valor}} </td>
         <td>{{item.estado}} </td>        
-        <td> <button type="button"  name="button"   class="btn btn-primary"  [routerLink]="['/estudiantes/form', item.id]" >Editar </button> </td>
+        <td> <button type="button"  name="button"   class="btn btn-primary"  [routerLink]="['/actualizar', item.id]" >Editar </button> </td>
         <td> <button class="btn btn-danger" (click)="eliminar(item)" > Eliminar </button></td>
       </tr>
     </tbody>

@@ -5,13 +5,15 @@ import { ServicioelectricoComponent } from "./components/servicioelectrico/servi
 import { ServicioElectricoRoutingModule } from "./servicioelectrico-routing.module";
 import { ServicioElectricoService } from "./shared/service/servicio-electrico-service";
 import { ListarServicioelectricoComponent } from './components/listar-servicioelectrico/listar-servicioelectrico.component';
+import { EliminarServicioElectricoComponent } from './components/eliminar-servicio-electrico/eliminar-servicio-electrico.component';
 
 @NgModule(
     {
         declarations:[
             CrearServicioelectricoComponent,
             ServicioelectricoComponent,
-            ListarServicioelectricoComponent
+            ListarServicioelectricoComponent,
+            EliminarServicioElectricoComponent
         ],
         imports:[
             ServicioElectricoRoutingModule,

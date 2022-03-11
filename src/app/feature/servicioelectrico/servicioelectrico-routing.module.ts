@@ -3,7 +3,6 @@ import {RouterModule, Routes } from "@angular/router";
 import { CrearServicioelectricoComponent } from "./components/crear-servicioelectrico/crear-servicioelectrico.component";
 import { ListarServicioelectricoComponent } from "./components/listar-servicioelectrico/listar-servicioelectrico.component";
 import { ServicioelectricoComponent } from "./components/servicioelectrico/servicioelectrico.component";
-
 const routes: Routes =[{
     path:'',
     component: ServicioelectricoComponent,
@@ -14,6 +13,10 @@ const routes: Routes =[{
         },{
             path:'listar',
             component:ListarServicioelectricoComponent
+        },
+        {
+            path:'actualizar/:id',
+            component:CrearServicioelectricoComponent
         }
        
     ]
@@ -25,6 +28,7 @@ const routes: Routes =[{
 @NgModule(
     {
         imports:[RouterModule.forChild(routes)],
+
         exports:[RouterModule]
     }
 )

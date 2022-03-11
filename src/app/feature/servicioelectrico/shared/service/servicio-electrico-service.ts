@@ -10,8 +10,6 @@ export class ServicioElectricoService {
     constructor(protected http: HttpService){}
 
     public guardar (servicioElectrico: ServicioElectrico){
-        console.log('URL: '+this.url);
-        console.log(servicioElectrico);
         return this.http.doPost<ServicioElectrico,boolean>(this.url, servicioElectrico, this.http.optsName('crear/actualizar productos'));
 
     }
@@ -21,7 +19,15 @@ export class ServicioElectricoService {
     }
 
     public eliminar (servicioElectrico: ServicioElectrico){
-        return this.http.doDelete<boolean>(this.url+servicioElectrico.id, this.http.optsName('eliminar servicio electrico')
+        return this.http.doDelete<boolean>(this.url+'/'+servicioElectrico.id, this.http.optsName('eliminar servicio electrico')
         );
+    }
+
+    public actualizar(servicioElectrico:ServicioElectrico){
+        return this.http.doPut<ServicioElectrico,boolean>(this.url+'/'+servicioElectrico.id, servicioElectrico, this.http.optsName('actualizar un servicio electrico'));
+    }
+    public obtenerPorId(id:number){
+        return this.http.doGet<ServicioElectrico>(this.url+'/'+id, this.http.optsName('obtener un servicio por id'));
+
     }
 }
