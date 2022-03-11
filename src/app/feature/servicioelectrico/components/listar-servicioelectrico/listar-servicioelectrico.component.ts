@@ -18,14 +18,4 @@ export class ListarServicioelectricoComponent implements OnInit {
     this.listaServiciosElectricos=this.servicioElectricoService.consultar();
   }
 
-  eliminar(servicioElectrico: ServicioElectrico){
-    this.servicioElectricoService.eliminar(servicioElectrico).subscribe(
-      ()=>{
-        this.listaServiciosElectricos=this.servicioElectricoService.consultar();
-      }
-
-    );
-
-  }
-
 }

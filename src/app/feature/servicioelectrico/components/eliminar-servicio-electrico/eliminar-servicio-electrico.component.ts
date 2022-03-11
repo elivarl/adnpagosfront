@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 import { ServicioElectrico } from '@servicioelectrico/shared/model/servicio-electrico';
 import { ServicioElectricoService } from '@servicioelectrico/shared/service/servicio-electrico-service';
 import { Observable } from 'rxjs';
@@ -11,10 +12,13 @@ import { Observable } from 'rxjs';
 export class EliminarServicioElectricoComponent implements OnInit {
 
   public listaServiciosElectricos:Observable<ServicioElectrico[]>;
+  servicioElectrico:ServicioElectrico;
 
-  constructor(protected servicioElectricoService: ServicioElectricoService) { }
+  constructor(protected servicioElectricoService: ServicioElectricoService, private activatedRoute:ActivatedRoute, private router:Router) { }
 
   ngOnInit(): void {
+    this.cargarServicioElectricoEliminar();
+    
   }
 
   eliminar(servicioElectrico: ServicioElectrico){
@@ -23,6 +27,24 @@ export class EliminarServicioElectricoComponent implements OnInit {
         this.listaServiciosElectricos=this.servicioElectricoService.consultar();
       }
 
+    );
+  }
+
+  cargarServicioElectricoEliminar(){
+    console.log('entrando a eliminar.');
+    this.activatedRoute.params.subscribe(
+      param=>{
+        let id=param['id'];
+        if(id){
+          this.servicioElectricoService.obtenerPorId(id).subscribe(
+            servicio=>{
+              this.servicioElectrico=servicio;
+              this.eliminar(this.servicioElectrico);
+              this.router.navigate(['servicio//listar']);
+            }
+          );
+        }
+      }
     );
 
   }

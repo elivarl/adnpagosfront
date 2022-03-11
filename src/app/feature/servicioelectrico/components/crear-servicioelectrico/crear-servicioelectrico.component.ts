@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ServicioElectrico } from '@servicioelectrico/shared/model/servicio-electrico';
 import { ServicioElectricoService } from '../../shared/service/servicio-electrico-service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-crear-servicioelectrico',
@@ -13,7 +13,7 @@ export class CrearServicioelectricoComponent implements OnInit {
   servicioElectricoForm: FormGroup;
   servicioElecrtrico: ServicioElectrico;
 
-  constructor(protected servicioElectricoService: ServicioElectricoService, private activatedRoute: ActivatedRoute) { }
+  constructor(protected servicioElectricoService: ServicioElectricoService,private router:Router, private activatedRoute: ActivatedRoute) { }
 
   ngOnInit(): void {
     this.construirFormularioServicio();
@@ -25,6 +25,7 @@ export class CrearServicioelectricoComponent implements OnInit {
       this.servicioElectricoService.actualizar(this.servicioElectricoForm.value).subscribe(
         () => {
             this.servicioElectricoForm.reset();
+            this.router.navigate(['servicio//crear']);
         }
       );
     } else {

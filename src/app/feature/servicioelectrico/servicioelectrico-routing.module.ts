@@ -1,6 +1,7 @@
 import { NgModule } from "@angular/core";
 import {RouterModule, Routes } from "@angular/router";
 import { CrearServicioelectricoComponent } from "./components/crear-servicioelectrico/crear-servicioelectrico.component";
+import { EliminarServicioElectricoComponent } from "./components/eliminar-servicio-electrico/eliminar-servicio-electrico.component";
 import { ListarServicioelectricoComponent } from "./components/listar-servicioelectrico/listar-servicioelectrico.component";
 import { ServicioelectricoComponent } from "./components/servicioelectrico/servicioelectrico.component";
 const routes: Routes =[{
@@ -17,6 +18,11 @@ const routes: Routes =[{
         {
             path:'actualizar/:id',
             component:CrearServicioelectricoComponent
+        },
+        {
+            path:'eliminar/:id',
+            component:EliminarServicioElectricoComponent
+
         }
        
     ]
