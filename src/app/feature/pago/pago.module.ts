@@ -4,7 +4,6 @@ import { PagoRoutingModule } from './pago-routing.module';
 import { SharedModule } from '@shared/shared.module';
 import { AniadirPagosComponent } from './components/aniadir-pagos/aniadir-pagos.component';
 import { PagoService } from './shared/service/pago-service';
-import { CrearPagoComponent } from './components/crear-pago/crear-pago.component';
 import { ListarPagoComponent } from './components/listar-pago/listar-pago.component';
 import { ListarPagoDetalleComponent } from './components/listar-pago-detalle/listar-pago-detalle.component';
 
@@ -15,7 +14,6 @@ import { ListarPagoDetalleComponent } from './components/listar-pago-detalle/lis
   declarations: [
     AniadirPagosComponent,
     PagoComponent,
-    CrearPagoComponent,
     ListarPagoComponent,
     ListarPagoDetalleComponent
   ],
@@ -24,6 +22,6 @@ import { ListarPagoDetalleComponent } from './components/listar-pago-detalle/lis
     SharedModule
 
   ],
-  providers:[PagoService]
+  providers: [PagoService]
 })
 export class PagoModule { }

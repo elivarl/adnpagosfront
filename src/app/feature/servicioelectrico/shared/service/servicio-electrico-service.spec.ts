@@ -1,10 +1,10 @@
 import { ServicioElectricoService } from './servicio-electrico-service';
 import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
-import {TestBed}from  '@angular/core/testing';
+import {TestBed} from '@angular/core/testing';
 import { HttpService } from '@core/services/http.service';
 import { ServicioElectrico } from '../model/servicio-electrico';
 import { HttpResponse } from '@angular/common/http';
-import { environment } from "src/environments/environment";
+import { environment } from 'src/environments/environment';
 
 describe('ServicioElectricoService', () => {
   let httpMock: HttpTestingController;

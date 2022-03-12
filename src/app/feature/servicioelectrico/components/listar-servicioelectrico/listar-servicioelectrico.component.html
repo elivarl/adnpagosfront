@@ -1,8 +1,4 @@
-<h1>Listar Servicio Electricos</h1>
-<div class="card">
-<div class="card-body"> </div>
-
-</div>
+<h1>Listar Servicio Eléctricos</h1>
 <div id="servicioselectricos">
   <table class="table">
     <thead>
@@ -18,15 +14,16 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let item of listaServiciosElectricos | async">
-        <td>{{item.numeroServicio}}</td>
-        <td>{{item.identificacionCliente}}</td>        
-        <td>{{item.nombreCliente}} </td>
-        <td>{{item.mes}} </td>
-        <td>{{item.valor}} </td>
-        <td>{{item.estado}} </td>        
-        <td> <button type="button"  name="button"   class="btn btn-primary"  [routerLink]="['/actualizar', item.id]" >Editar </button> </td>
-        <td> <button class="btn btn-danger" [routerLink]="['/eliminar', item.id]" > Eliminar </button></td>
+      <tr *ngFor="let servicio of listaServiciosElectricos | async">
+        <td>{{servicio.numeroServicio}}</td>
+        <td>{{servicio.identificacionCliente}}</td>        
+        <td>{{servicio.nombreCliente}} </td>
+        <td>{{servicio.mes}} </td>
+        <td>{{servicio.valor}} </td>
+        <td>{{servicio.estado}} </td>        
+        <td> <button type="button"  name="button"   class="btn btn-primary"  [routerLink]="['/actualizar', servicio.id]" >Editar </button> </td>
+        <td> <button class="btn btn-danger" [routerLink]="['/eliminar', servicio.id]" > Eliminar </button></td>
       </tr>
     </tbody>
   </table>
+</div>

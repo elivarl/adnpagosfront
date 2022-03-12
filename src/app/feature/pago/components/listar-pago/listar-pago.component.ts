@@ -10,12 +10,12 @@ import { Observable } from 'rxjs';
 })
 export class ListarPagoComponent implements OnInit {
 
-  public listaPagos:Observable<Pago[]>;
+  public listaPagos: Observable<Pago[]>;
 
-  constructor( protected pagoService:PagoService) { }
+  constructor(protected pagoService: PagoService) { }
 
   ngOnInit(): void {
-    this.listaPagos=this.pagoService.consultar();
+    this.listaPagos = this.pagoService.consultar();
   }
 
 }

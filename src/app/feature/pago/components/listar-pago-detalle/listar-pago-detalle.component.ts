@@ -10,23 +10,19 @@ import { Observable } from 'rxjs';
   styleUrls: ['./listar-pago-detalle.component.css']
 })
 export class ListarPagoDetalleComponent implements OnInit {
-  public listaPagoDetalles:Observable<PagoDetalle[]>;
-  constructor(protected pagoService:PagoService, protected activatedRoute:ActivatedRoute) { }
+  public listaPagoDetalles: Observable<PagoDetalle[]>;
+  constructor(protected pagoService: PagoService, protected activatedRoute: ActivatedRoute) { }
 
   ngOnInit(): void {
     this.cargarPagoDetalles();
   }
 
-  cargarPagoDetalles(){
-    console.log('Hola pago detalles');
+  cargarPagoDetalles() {
     this.activatedRoute.params.subscribe(
-      
-      params=>{
-        let idpago=params['idpago'];
-        if(idpago){
-          this.listaPagoDetalles=this.pagoService.consultarPagoDetalle(idpago);
-          console.log(this.listaPagoDetalles);
-
+      params => {
+        const idpago = params.idpago;
+        if (idpago) {
+          this.listaPagoDetalles = this.pagoService.consultarPagoDetalle(idpago);
         }
       }
     );

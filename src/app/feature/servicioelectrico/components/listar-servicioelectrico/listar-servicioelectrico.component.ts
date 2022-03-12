@@ -10,12 +10,12 @@ import { Observable } from 'rxjs';
 })
 export class ListarServicioelectricoComponent implements OnInit {
 
-  public listaServiciosElectricos:Observable<ServicioElectrico[]>;
+  public listaServiciosElectricos: Observable<ServicioElectrico[]>;
 
   constructor(protected servicioElectricoService: ServicioElectricoService) { }
 
   ngOnInit(): void {
-    this.listaServiciosElectricos=this.servicioElectricoService.consultar();
+    this.listaServiciosElectricos = this.servicioElectricoService.consultar();
   }
 
 }

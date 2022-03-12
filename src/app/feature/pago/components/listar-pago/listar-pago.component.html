@@ -13,15 +13,14 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let item of listaPagos | async">
-        <td>{{item.id}}</td>
-        <td>{{item.fechaPago}}</td>
-        <td>{{item.identificacionCliente}}</td>
-        <td>{{item.subTotal}} </td>
-        <td>{{item.porcentajeDescuentoRecargo}} </td>
-        <td>{{item.valorDescuentoRecargo}} </td>
-        <td>{{item.total}} </td>
-        <td> <button class="btn btn-danger" [routerLink]="['/listarpagodetalle', item.id]"> Ver </button></td>
+      <tr *ngFor="let pago of listaPagos | async">
+        <td>{{pago.fechaPago}}</td>
+        <td>{{pago.identificacionCliente}}</td>
+        <td>{{pago.subTotal}} </td>
+        <td>{{pago.porcentajeDescuentoRecargo}} </td>
+        <td>{{pago.valorDescuentoRecargo}} </td>
+        <td>{{pago.total}} </td>
+        <td> <button class="btn btn-danger" [routerLink]="['/listarpagodetalle', pago.id]"> Ver </button></td>
       </tr>
     </tbody>
   </table>

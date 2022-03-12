@@ -16,7 +16,7 @@
           </tr>
         </thead>
         <tbody>
-          <tr *ngFor="let item of listaServiciosElectricosAdd">
+          <tr *ngFor="let item of listaServiciosElectricosTemporalMostrar">
             <td>{{item.numeroServicio}}</td>
             <td>{{item.identificacionCliente}}</td>
             <td>{{item.nombreCliente}} </td>
@@ -74,19 +74,17 @@
             </tr>
           </thead>
           <tbody>
-            <tr *ngFor="let item of listaServiciosElectricos | async">
-              <td>{{item.numeroServicio}}</td>
-              <td>{{item.identificacionCliente}}</td>
-              <td>{{item.nombreCliente}} </td>
-              <td>{{item.mes}} </td>
-              <td>{{item.valor}} </td>
-              <td>{{item.estado}} </td>
-              <td> <button class="btn btn-secondary" (click)='cargarServicioElectrico(item.id)'> Añadir </button></td>
+            <tr *ngFor="let servicio of listaServiciosElectricos | async">
+              <td>{{servicio.numeroServicio}}</td>
+              <td>{{servicio.identificacionCliente}}</td>
+              <td>{{servicio.nombreCliente}} </td>
+              <td>{{servicio.mes}} </td>
+              <td>{{servicio.valor}} </td>
+              <td>{{servicio.estado}} </td>
+              <td> <button class="btn btn-secondary" (click)='buscaServicioElectricoParaAddPago(servicio.id)'> Añadir </button></td>
             </tr>
           </tbody>
         </table>
-
-
 
       </div>
 

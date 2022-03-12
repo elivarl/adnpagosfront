@@ -11,34 +11,32 @@ import { Observable } from 'rxjs';
 })
 export class EliminarServicioElectricoComponent implements OnInit {
 
-  public listaServiciosElectricos:Observable<ServicioElectrico[]>;
-  servicioElectrico:ServicioElectrico;
+  public listaServiciosElectricos: Observable <ServicioElectrico[]>;
+  servicioElectrico: ServicioElectrico;
 
-  constructor(protected servicioElectricoService: ServicioElectricoService, private activatedRoute:ActivatedRoute, private router:Router) { }
+  constructor(protected servicioElectricoService: ServicioElectricoService,
+    private activatedRoute: ActivatedRoute, private router: Router) { }
 
   ngOnInit(): void {
-    this.cargarServicioElectricoEliminar();
-    
+    this.cargarServicioElectricoAEliminar();
   }
 
   eliminar(servicioElectrico: ServicioElectrico){
     this.servicioElectricoService.eliminar(servicioElectrico).subscribe(
-      ()=>{
-        this.listaServiciosElectricos=this.servicioElectricoService.consultar();
+      () => {
+         this.listaServiciosElectricos = this.servicioElectricoService.consultar();
       }
-
     );
   }
 
-  cargarServicioElectricoEliminar(){
-    console.log('entrando a eliminar.');
+  cargarServicioElectricoAEliminar(){
     this.activatedRoute.params.subscribe(
-      param=>{
-        let id=param['id'];
-        if(id){
+      param => {
+        const id = param.id;
+        if (id) {
           this.servicioElectricoService.obtenerPorId(id).subscribe(
-            servicio=>{
-              this.servicioElectrico=servicio;
+            servicio => {
+              this.servicioElectrico = servicio;
               this.eliminar(this.servicioElectrico);
               this.router.navigate(['servicio//listar']);
             }
@@ -48,5 +46,4 @@ export class EliminarServicioElectricoComponent implements OnInit {
     );
 
   }
-
 }

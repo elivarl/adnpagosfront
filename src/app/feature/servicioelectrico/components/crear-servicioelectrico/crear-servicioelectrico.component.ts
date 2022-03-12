@@ -11,16 +11,17 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class CrearServicioelectricoComponent implements OnInit {
   servicioElectricoForm: FormGroup;
-  servicioElecrtrico: ServicioElectrico;
+  servicioElectrico: ServicioElectrico;
 
-  constructor(protected servicioElectricoService: ServicioElectricoService,private router:Router, private activatedRoute: ActivatedRoute) { }
+  constructor(protected servicioElectricoService: ServicioElectricoService,
+    private router: Router, private activatedRoute: ActivatedRoute) { }
 
   ngOnInit(): void {
     this.construirFormularioServicio();
-    this.cargar();
+    this.cargarServicioParaActualizar();
   }
 
-  crear() {
+  crearServicio() {
     if (this.servicioElectricoForm.get('id').value) {
       this.servicioElectricoService.actualizar(this.servicioElectricoForm.value).subscribe(
         () => {
@@ -32,7 +33,6 @@ export class CrearServicioelectricoComponent implements OnInit {
       this.servicioElectricoService.guardar(this.servicioElectricoForm.value).subscribe(
         respuesta => {
           if (respuesta) {
-            console.log('reseet '+respuesta);
             this.servicioElectricoForm.reset();
           }
         }
@@ -40,8 +40,6 @@ export class CrearServicioelectricoComponent implements OnInit {
 
     }
   }
-
-
 
   private construirFormularioServicio() {
     this.servicioElectricoForm = new FormGroup({
@@ -57,25 +55,21 @@ export class CrearServicioelectricoComponent implements OnInit {
 
   }
 
-  cargar(): void {
-
+  cargarServicioParaActualizar(): void {
     this.activatedRoute.params.subscribe(
       respuesta => {
-        let id = respuesta['id'];
+        const id = respuesta.id;
         if (id) {
           this.servicioElectricoService.obtenerPorId(id).subscribe(
             servicio => {
-              this.servicioElecrtrico = servicio;
-              this.servicioElectricoForm.get('id').setValue(this.servicioElecrtrico.id);
-              this.servicioElectricoForm.get('numeroServicio').setValue(this.servicioElecrtrico.numeroServicio);
-              this.servicioElectricoForm.get('identificacionCliente').setValue(this.servicioElecrtrico.identificacionCliente);
-              this.servicioElectricoForm.get('nombreCliente').setValue(this.servicioElecrtrico.nombreCliente);
-              this.servicioElectricoForm.get('mes').setValue(this.servicioElecrtrico.mes);
-              this.servicioElectricoForm.get('fechaMaximaPago').setValue(this.servicioElecrtrico.fechaMaximaPago);
-              this.servicioElectricoForm.get('valor').setValue(this.servicioElecrtrico.valor);
-
-              console.log('Hola...' + this.servicioElectricoForm.get('id').value);
-
+              this.servicioElectrico = servicio;
+              this.servicioElectricoForm.get('id').setValue(this.servicioElectrico.id);
+              this.servicioElectricoForm.get('numeroServicio').setValue(this.servicioElectrico.numeroServicio);
+              this.servicioElectricoForm.get('identificacionCliente').setValue(this.servicioElectrico.identificacionCliente);
+              this.servicioElectricoForm.get('nombreCliente').setValue(this.servicioElectrico.nombreCliente);
+              this.servicioElectricoForm.get('mes').setValue(this.servicioElectrico.mes);
+              this.servicioElectricoForm.get('fechaMaximaPago').setValue(this.servicioElectrico.fechaMaximaPago);
+              this.servicioElectricoForm.get('valor').setValue(this.servicioElectrico.valor);
             }
           );
         }
