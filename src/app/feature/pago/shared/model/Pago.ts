@@ -2,15 +2,16 @@
 import { ServicioElectrico } from 'src/app/feature/servicioelectrico/shared/model/servicio-electrico';
 export class Pago{
     id:string;
-    fechaPago:Date;
+    fechaPago:string;
     identificacionCliente:string;
     subTotal:number;
     porcentajeDescuentoRecargo:string;
     valorDescuentoRecargo:number;
     total:number;
-    pagoServicios:ServicioElectrico[];
+    pagoServicios:Array<ServicioElectrico>=[]; 
+    comandoServicioElectricos:Array<ServicioElectrico>=[]; 
 
-    constructor( id:string,fechaPago:Date, identificacionCliente:string, subTotal:number,porcentajeDescuentoRecargo:string, valorDescuentoRecargo:number,total:number, pagoServicios:ServicioElectrico[]){
+    constructor( id:string,fechaPago:string, identificacionCliente:string, subTotal:number,porcentajeDescuentoRecargo:string, valorDescuentoRecargo:number,total:number, pagoServicios:ServicioElectrico[]){
         this.id=id;
         this.fechaPago=fechaPago;
         this.identificacionCliente=identificacionCliente;

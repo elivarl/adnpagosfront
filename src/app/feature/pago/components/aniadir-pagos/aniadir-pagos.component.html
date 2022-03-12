@@ -1,1 +1,93 @@
-<p>aniadir-pagos works!</p>
+<h1> Servicios a pagar</h1>
+
+<div class="card">
+  <div class="card-body">
+
+    <div id="servicioselectricosadd">
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Número de Servicio</th>
+            <th scope="col">Identificacion Cliente</th>
+            <th scope="col">Nombre Cliente</th>
+            <th scope="col">Mes pago</th>
+            <th scope="col">Valor</th>
+            <th scope="col">Estado</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of listaServiciosElectricosAdd">
+            <td>{{item.numeroServicio}}</td>
+            <td>{{item.identificacionCliente}}</td>
+            <td>{{item.nombreCliente}} </td>
+            <td>{{item.mes}} </td>
+            <td>{{item.valor}} </td>
+            <td>{{item.estado}} </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <table class="table">
+        <tr>
+          <td>Subtotal:</td>
+          <td><input type="text" name="subTotal" [(ngModel)]="pagoRequest.subTotal"
+              [ngModelOptions]="{standalone: true}"></td>
+        </tr>      
+
+        <tr>
+          <td>TotPorcentaje Recargo/Descuento:</td>
+          <td><input type="text" name="porcentajeRecargoDescuento" [(ngModel)]="pagoRequest.porcentajeDescuentoRecargo"
+            [ngModelOptions]="{standalone: true}">
+          </td>
+        </tr>
+
+        <tr>
+          <td>Valor Recargo/Descuento:</td>
+          <td> <input type="text" name="valorRecargoDescuento" [(ngModel)]="pagoRequest.valorDescuentoRecargo"
+            [ngModelOptions]="{standalone: true}">
+          </td>
+        </tr>
+
+        <tr>
+          <td>Total a pagar:</td>
+          <td><input type="text" name="total" [(ngModel)]="pagoRequest.total" [ngModelOptions]="{standalone: true}">
+          </td>
+        </tr>
+
+      </table>
+
+
+      <td> <button class="btn btn-secondary" (click)='guardar()'> Crear Pago </button></td>
+
+      <h1> Servicios</h1>
+      <div id="servicioselectricos">
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">Número de Servicio</th>
+              <th scope="col">Identificacion Cliente</th>
+              <th scope="col">Nombre Cliente</th>
+              <th scope="col">Mes pago</th>
+              <th scope="col">Valor</th>
+              <th scope="col">Estado</th>
+              <th scope="col">Añadir para Pagar</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let item of listaServiciosElectricos | async">
+              <td>{{item.numeroServicio}}</td>
+              <td>{{item.identificacionCliente}}</td>
+              <td>{{item.nombreCliente}} </td>
+              <td>{{item.mes}} </td>
+              <td>{{item.valor}} </td>
+              <td>{{item.estado}} </td>
+              <td> <button class="btn btn-secondary" (click)='cargarServicioElectrico(item.id)'> Añadir </button></td>
+            </tr>
+          </tbody>
+        </table>
+
+
+
+      </div>
+
+    </div>

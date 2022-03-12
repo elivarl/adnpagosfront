@@ -1,1 +1,9 @@
-<p>pago works!</p>
+<nav>
+    <a id="linkServicioElectrico" routerLink="./" routerLinkActive="active"
+      [routerLinkActiveOptions]="{ exact: true }">Pago</a>
+      <br>
+    <a id="linkCrearServicioElectrico" routerLink="./servicios" routerLinkActive="active">Pagar Servicios</a>
+    <br>
+    <a id="linkListarServicioElectrico" routerLink="./listar" routerLinkActive="active">Listar Pagos</a>
+  </nav>
+  <router-outlet></router-outlet>
