@@ -15,11 +15,6 @@ export class ListarPagoComponent implements OnInit {
   constructor( protected pagoService:PagoService) { }
 
   ngOnInit(): void {
-    this.pagoService.consultar().subscribe(
-      lista=>{
-        console.log(lista)
-      }
-    );
     this.listaPagos=this.pagoService.consultar();
   }
 

@@ -1,1 +1,17 @@
-<p>listar-pago-detalle works!</p>
+<h1> Detalle Pago</h1>
+<div id="pagosdetalle">
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Descripción</th>
+        <th scope="col">Valor</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let pagoDetalle of listaPagoDetalles | async">
+        <td>{{pagoDetalle.descripcion}}</td>
+        <td>{{pagoDetalle.valor}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

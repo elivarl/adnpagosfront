@@ -23,8 +23,8 @@ export class PagoService {
         return this.http.doPost<Pago, Pago>(this.url+'/detalle', pago, this.http.optsName('añadir detalles a un pago'));
     }
 
-    public consultarPagoDetalle(pago: Pago) {
-        return this.http.doGet<PagoDetalle[]>(this.url+'/pagodetalles/'+pago.id, this.http.optsName('consulta detalles de un pago'));
+    public consultarPagoDetalle(id: number) {
+        return this.http.doGet<PagoDetalle[]>(this.url+'/pagodetalles/'+id, this.http.optsName('consulta detalles de un pago'));
 
     }   
 

@@ -15,7 +15,6 @@
         <th scope="col">Estado</th>        
         <th scope="col">Editar</th>
         <th scope="col">Eliminar</th>
-        <th scope="col">Añadir para Pagar</th>
       </tr>
     </thead>
     <tbody>
@@ -28,7 +27,6 @@
         <td>{{item.estado}} </td>        
         <td> <button type="button"  name="button"   class="btn btn-primary"  [routerLink]="['/actualizar', item.id]" >Editar </button> </td>
         <td> <button class="btn btn-danger" [routerLink]="['/eliminar', item.id]" > Eliminar </button></td>
-        <td> <button class="btn btn-secondary" [routerLink]="['/addserviciopago', item.id]" > Añadir </button></td>
       </tr>
     </tbody>
   </table>

@@ -1,24 +1,28 @@
 <h1> Pagos</h1>
-      <div id="pagos">
-        <table class="table">
-          <thead>
-            <tr>
-              <th scope="col">Fecha Pago</th>
-              <th scope="col">Identificacion Cliente</th>
-              <th scope="col">Subtotal</th>
-              <th scope="col">Porcentaje Descuento/Recargo</th>
-              <th scope="col">Valor Descuento/Recargo</th>
-              <th scope="col">Total</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr *ngFor="let item of listaPagos | async">
-              <td>{{item.fechaPago}}</td>
-              <td>{{item.identificacionCliente}}</td>
-              <td>{{item.subTotal}} </td>
-              <td>{{item.porcentajeDescuentoRecargo}} </td>
-              <td>{{item.valorDescuentoRecargo}} </td>              
-              <td>{{item.total}} </td>
-            </tr>
-          </tbody>
-        </table>
+<div id="pagos">
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Fecha Pago</th>
+        <th scope="col">Identificacion Cliente</th>
+        <th scope="col">Subtotal</th>
+        <th scope="col">Porcentaje Descuento/Recargo</th>
+        <th scope="col">Valor Descuento/Recargo</th>
+        <th scope="col">Total</th>
+        <th scope="col">Ver detalle</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of listaPagos | async">
+        <td>{{item.id}}</td>
+        <td>{{item.fechaPago}}</td>
+        <td>{{item.identificacionCliente}}</td>
+        <td>{{item.subTotal}} </td>
+        <td>{{item.porcentajeDescuentoRecargo}} </td>
+        <td>{{item.valorDescuentoRecargo}} </td>
+        <td>{{item.total}} </td>
+        <td> <button class="btn btn-danger" [routerLink]="['/listarpagodetalle', item.id]"> Ver </button></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
