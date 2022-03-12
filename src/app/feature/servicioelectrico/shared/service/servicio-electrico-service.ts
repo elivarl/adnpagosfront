@@ -14,7 +14,7 @@ export class ServicioElectricoService {
     }
 
     public consultar(){
-        return this.http.doGet<ServicioElectrico []>(this.url, this.http.optsName('consultar servicios electricos'));
+        return this.http.doGet<ServicioElectrico []>(`${environment.endpoint}/servicios`, this.http.optsName('consultar servicios electricos'));
     }
 
     public eliminar(servicioElectrico: ServicioElectrico){
