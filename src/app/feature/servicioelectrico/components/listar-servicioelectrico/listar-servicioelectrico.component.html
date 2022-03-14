@@ -1,6 +1,6 @@
 <h1>Listar Servicio Eléctricos</h1>
 <div id="servicioselectricos">
-  <table class="table">
+  <table class="table" id="servicios">
     <thead>
       <tr>
         <th scope="col">Número de Servicio</th>
@@ -14,7 +14,7 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let servicio of listaServiciosElectricos | async">
+      <tr *ngFor="let servicio of listaServiciosElectricos | async" >
         <td>{{servicio.numeroServicio}}</td>
         <td>{{servicio.identificacionCliente}}</td>        
         <td>{{servicio.nombreCliente}} </td>
